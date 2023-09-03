@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: lifegivers_server_production
-  username: lifegivers_server
-  password: <%= ENV["LIFEGIVERS_SERVER_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: lifegivers_server_production
+  # username: lifegivers_server
+  # password: <%= ENV["LIFEGIVERS_SERVER_DATABASE_PASSWORD"] %>
