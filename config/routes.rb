@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # root 'welcome#index'
+  root 'welcome#index'
   resources :users, only: [:new, :create]
   get "/me", to: "users#show"
   post '/login', to: 'users#login'
