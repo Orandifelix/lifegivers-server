@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_073059) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_074516) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "donor_name"
+    t.bigint "donation_type_id", null: false
+    t.binary "donation_photo"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["donation_type_id"], name: "index_articles_on_donation_type_id"
+  end
 
   create_table "donation_types", force: :cascade do |t|
     t.string "name"
@@ -57,5 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_073059) do
     t.index ["username"], name: "index_users_on_username"
   end
 
+  add_foreign_key "articles", "donation_types"
   add_foreign_key "donations", "donation_types"
 end
