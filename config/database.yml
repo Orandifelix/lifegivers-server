@@ -1,11 +1,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost  # Specify the PostgreSQL host (change if necessary)
-  username: postgres  # Replace with your PostgreSQL username
-  password: 1234  # Replace with your PostgreSQL password
-  port: 5432  # Specify the PostgreSQL port (change if necessary)
 
 development:
   <<: *default
@@ -14,6 +12,7 @@ development:
 test:
   <<: *default
   database: lifegivers_server_test
+
 
 production:
   <<: *default
