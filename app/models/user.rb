@@ -9,6 +9,5 @@ class User < ApplicationRecord
     validates :weight, presence: true, numericality: true
     validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :contact_number, presence: true
-    validates :profile_picture, presence: true
 end
   
