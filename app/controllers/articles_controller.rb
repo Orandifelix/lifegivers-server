@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
-  
+    skip_before_action :authorize # Skip authorization for the create action
+
     # Index action to list all articles
     def index
       @articles = Article.all
