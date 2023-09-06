@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # donation centres
   resources :donation_centers
   #articles
-  resources :articles  
+  resources :articles
+  # catch-all route for undefined routes
+  match '*path', to: 'application#not_found', via: :all
 end
 
