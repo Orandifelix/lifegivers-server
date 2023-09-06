@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   delete '/logout', to: 'users#logout'
   resources :donation_centers
+  resources :donors, only: [:index]
 end
 
