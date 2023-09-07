@@ -1,5 +1,5 @@
 class DonationCentersController < ApplicationController
-    skip_before_action :authorize
+    skip_before_action :authorize, except: [:create, :update, :destroy]
     skip_before_action :verify_authenticity_token
     before_action :set_donation_center, only: [:show, :update, :destroy]
   
