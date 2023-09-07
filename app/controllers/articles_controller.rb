@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
     skip_before_action :authorize # Skip authorization for the create action
-
+    skip_before_action :verify_authenticity_token
     # Index action to list all articles
     def index
       @articles = Article.all
@@ -20,11 +20,11 @@ class ArticlesController < ApplicationController
   
     # Create action to save a new article
     def create
-      @article = Article.new(article_params)
-      if @article.save
-        render json: @article, status: :created
+      article = Article.new(article_params)
+      if article.save
+        render json: article, status: :created
       else
-        render json: { errors: @article.errors.full_messages }, status: :unprocessable_entity
+        render json:article.errors, status: :unprocessable_entity
       end
     end
   
