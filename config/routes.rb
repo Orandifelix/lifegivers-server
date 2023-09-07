@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :articles
   # catch-all route for undefined routes
   match '*path', to: 'application#not_found', via: :all
+  #donation types
+  resources :donation_types, only: [:index, :show]
 end
 
