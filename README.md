@@ -43,11 +43,11 @@ LifeGivers serves as a bridge between compassionate donors and healthcare facili
 
 To get started with LifeGivers locally, follow these steps:
 
-1. Clone this repository.
+1. Clone the [frontend repository](https://github.com/Orandifelix/lifegivers-client) and the [backend repository](https://github.com/Orandifelix/lifegivers-server).
 2. Install the necessary dependencies using `bundle install`.
 3. Set up your database and run migrations with `rails db:create` and `rails db:migrate`.
 4. Start the server using `rails server`.
-5. Access the application at `http://localhost:3000`.
+5. Access the frontend application at [https://lifegivers.netlify.app/](https://lifegivers.netlify.app/) and the backend application at [https://lifegivers-server.onrender.com/](https://lifegivers-server.onrender.com/).
 
 ## Technologies Used
 
